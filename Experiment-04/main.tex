@@ -13,7 +13,7 @@
 \usepackage{lipsum} % For dummy text, remove this for your actual report
 \usepackage{listings}
 \usepackage{subcaption}
-\usepackage{tcolorbox}
+\usepackage[most]{tcolorbox}
 \usepackage{fancyhdr}
 \lstset{
     language=Python,        % Specify the language
@@ -93,84 +93,92 @@ The objective of this experiment is to investigate the transient response of an 
 
 \begin{tcolorbox}[colframe=blue!70!black,colback=cyan!10!white,title=\textbf{\textcolor{blue}{Equipment Required}}]
 \begin{itemize}
-    \item \textcolor{green}{100 $\mu$F capacitor}  
-    \item \textcolor{green}{Largest available inductor (denoted as L)}  
-    \item \textcolor{green}{Small resistor (for optional damping analysis)}  
-    \item \textcolor{green}{DC power supply}  
-    \item \textcolor{green}{Digital oscilloscope}  
-    \item \textcolor{green}{Function generator}  
-    \item \textcolor{green}{Connecting wires and probes}  
-    \item \textcolor{green}{Multimeter for component verification}  
-\end{itemize}
+\item \textcolor{green}{100 $\mu$F capacitor}\item \textcolor{green}{Largest available inductor (denoted as L)}\item \textcolor{green}{Small resistor (for optional damping analysis)}\item \textcolor{green}{DC power supply}\item \textcolor{green}{Digital oscilloscope}\item \textcolor{green}{Function generator}\item \textcolor{green}{Connecting wires and probes}\item \textcolor{green}{Multimeter for component verification}\end{itemize}
 \end{tcolorbox}
 
 \section{\textcolor{red}{Theory}}
-\begin{tcolorbox}[colframe=purple!70!black,colback=magenta!10!white]
-An LC circuit consists of an inductor (L) and a capacitor (C) connected in parallel or series. The system follows a second-order differential equation:
+\subsection{\textcolor{blue}{Mathematical Analysis}}
+\begin{tcolorbox}[breakable , colframe=purple!70!black,colback=magenta!10!white]
+An LC circuit follows a second-order differential equation:
 \begin{equation}
-    \frac{d^2V}{dt^2} + \frac{R}{L} \frac{dV}{dt} + \frac{1}{LC} V = 0
+\frac{d^2V}{dt^2} + \frac{R}{L} \frac{dV}{dt} + \frac{1}{LC} V = 0
 \end{equation}
-\end{tcolorbox}
 
-\section{\textcolor{red}{Procedure}}
-\begin{tcolorbox}[colfame=orange!70!black,colback=yellow!20!white]
-\begin{enumerate}
-    \item \textbf{Precharge the Capacitor:}
-    \begin{itemize}
-        \item Connect the 100 $\mu$F capacitor to a 5V DC power supply.
-        \item Verify the capacitor’s voltage using a multimeter before proceeding.
-    \end{itemize}
-    \item \textbf{Construct the LC Circuit:}
-    \begin{itemize}
-        \item Select the largest available inductor.
-        \item Connect the capacitor in parallel with the inductor.
-    \end{itemize}
-    \item \textbf{Capture the Transient Response:}
-    \begin{itemize}
-        \item Attach the oscilloscope probes across the capacitor terminals.
-        \item Observe and record the oscillations.
-    \end{itemize}
-\end{enumerate}
-\end{tcolorbox}
-
-\section{\textcolor{red}{Observations and Analysis}}
-\begin{tcolorbox}[colframe=teal!70!black,colback=cyan!10!white]
+For an \textbf{ideal LC circuit} (with zero resistance), the equation reduces to:
+\begin{equation}
+\frac{d^2V}{dt^2} + \frac{1}{LC} V = 0
+\end{equation}
+The general solution is given by:
+\begin{equation}
+V(t) = V_0 \cos(\Omega_n t + \phi)
+\end{equation}
+where:
 \begin{itemize}
-    \item \textcolor{blue}{Captured transient response waveform from the oscilloscope.}
-    \item \textcolor{blue}{Measured oscillation period and compared it with theoretical expectations.}
+\item $\Omega_n = \frac{1}{\sqrt{LC}}$ is the natural frequency,
+\item $V_0$ is the initial voltage, and
+\item $\phi$ is the phase angle.
+\end{itemize}
+
+However, in the \textbf{real world}, resistance ($R$) cannot be ignored. This results in a damped response:
+\begin{equation}
+\frac{d^2V}{dt^2} + \frac{R}{L} \frac{dV}{dt} + \frac{1}{LC} V = 0
+\end{equation}
+The solution depends on the damping ratio $\xi = \frac{R}{2} \sqrt{\frac{C}{L}}$:
+\begin{itemize}
+\item \textbf{Underdamped ($\xi < 1$):}
+\begin{equation}
+V(t) = V_0 e^{-\xi \Omega_n t} \cos(\Omega_d t + \phi), \quad \Omega_d = \Omega_n \sqrt{1 - \xi^2}
+\end{equation}
+\item \textbf{Critically damped ($\xi = 1$):}
+\begin{equation}
+V(t) = (A + Bt) e^{-\Omega_n t}
+\end{equation}
+\item \textbf{Overdamped ($\xi > 1$):}
+\begin{equation}
+V(t) = A e^{-s_1 t} + B e^{-s_2 t}, \quad s_{1,2} = \Omega_n (\xi \pm \sqrt{\xi^2 - 1})
+\end{equation}
 \end{itemize}
 \end{tcolorbox}
 
+\section{\textcolor{red}{Real-World Considerations}}
+\begin{tcolorbox}[colframe=black!70!black,colback=gray!10!white]
+In practical circuits, parasitic resistances from wires, connectors, and components introduce damping. This results in energy loss and prevents perpetual oscillation. The presence of resistance reduces the amplitude over time, transforming the ideal sinusoidal response into a decaying waveform. The real-world transient response is always governed by the damped equation:
+\begin{equation}
+\frac{d^2V}{dt^2} + \frac{R}{L} \frac{dV}{dt} + \frac{1}{LC} V = 0
+\end{equation}
+\textcolor{black}{Understanding and accounting for these effects is essential for accurate circuit design and analysis.}
+\end{tcolorbox}
+
 \section{\textcolor{red}{Images of Responses}}
-\begin{tcolorbox}[colframe=black!70!black,colback=gray!10!white,title=\textbf{\textcolor{white}{Oscilloscope Waveforms and Circuit Images}}]
+\begin{tcolorbox}[breakable , colframe=black!70!black,colback=gray!10!white,title=\textbf{\textcolor{black}{Oscilloscope Waveforms and Circuit Images}}]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{response_image1.png} \
-\includegraphics[width=0.8\textwidth]{response_image2.png}
+\includegraphics[width=1.0\textwidth]{fig/response_image1.jpg} \
+\includegraphics[width=0.8\textwidth]{fig/response_image2.jpg}
 \end{center}
-\textcolor{black}{Above images depict the transient response captured during the experiment.}
+\textcolor{black}{Above images depict the transient response captured during the experiment, highlighting differences between ideal and real-world oscillations.}
 \end{tcolorbox}
 
 \section{\textcolor{red}{Conclusion}}
 \begin{tcolorbox}[colframe=red!70!black,colback=yellow!10!white]
-The experimentally observed natural frequency closely matched theoretical values. The presence of resistance introduced measurable damping effects.
+The experimentally observed natural frequency closely matched theoretical values. However, real-world resistance caused measurable damping effects, reducing amplitude over time. This experiment validated that while ideal equations predict behavior accurately, practical factors must be accounted for in realistic scenarios.
 \end{tcolorbox}
 
 \section{\textcolor{red}{Safety Precautions}}
 \begin{tcolorbox}[colframe=purple!70!black,colback=magenta!10!white]
 \begin{itemize}
-    \item Handle charged capacitors carefully to avoid accidental discharges.
-    \item Ground the oscilloscope properly for accurate and safe measurements.
+\item Handle charged capacitors carefully to avoid accidental discharges.
+\item Ground the oscilloscope properly for accurate and safe measurements.
 \end{itemize}
 \end{tcolorbox}
 
 \section{\textcolor{red}{References}}
 \begin{tcolorbox}[colframe=green!70!black,colback=yellow!10!white]
 \begin{itemize}
-    \item \textit{Transient Response of an LC Circuit}.
-    \item Circuit analysis textbooks and academic literature.
+\item \textit{Transient Response of an LC Circuit}.
+\item Circuit analysis textbooks and academic literature.
 \end{itemize}
 \end{tcolorbox}
 
 \end{document}
 
-r
+
