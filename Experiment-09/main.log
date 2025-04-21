@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.3.11)  21 APR 2025 13:12
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.3.11)  21 APR 2025 14:35
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -651,7 +651,17 @@ Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
 \extratabsurround=\skip76
 \backup@length=\skip77
 \ar@cellbox=\box76
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `fig:your_image_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:your_image_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:your_image_label' multiply defined.
+
+)
 \openout1 = main.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -816,31 +826,65 @@ Package luatex.def Info: figs/state.png  used on input line 126.
 (luatex.def)             Requested size: 362.37569pt x 258.07048pt.
  [4
 Non-PDF special ignored!<./figs/state.png>]
-! Undefined control sequence.
-<argument> \m@th $\displaystyle T_2 = Q_2\oveline 
-                                                  {x} + Q_2Q_0 + Q_1Q_0x$
-l.248 ...{T_2 = Q_2\oveline{x} + Q_2Q_0 + Q_1Q_0x}
-                                                  
-? 
-
 
 [5]
+<figs/diagram.png, id=33, 1364.09625pt x 846.16125pt>
+File: figs/diagram.png Graphic file (type png)
+<use figs/diagram.png>
+Package luatex.def Info: figs/diagram.png  used on input line 276.
+(luatex.def)             Requested size: 362.37569pt x 224.78685pt.
 
-[6] (./main.aux)
+
+[6<./figs/diagram.png>]
+<figs/scheme1.png, id=37, 1302.8675pt x 902.37125pt>
+File: figs/scheme1.png Graphic file (type png)
+<use figs/scheme1.png>
+Package luatex.def Info: figs/scheme1.png  used on input line 284.
+(luatex.def)             Requested size: 362.37569pt x 250.9824pt.
+<figs/scheme2.png, id=38, 1231.60126pt x 897.3525pt>
+File: figs/scheme2.png Graphic file (type png)
+<use figs/scheme2.png>
+Package luatex.def Info: figs/scheme2.png  used on input line 290.
+(luatex.def)             Requested size: 362.37569pt x 264.01837pt.
+<figs/fig.png, id=39, 722.7pt x 1284.8pt>
+File: figs/fig.png Graphic file (type png)
+<use figs/fig.png>
+Package luatex.def Info: figs/fig.png  used on input line 297.
+(luatex.def)             Requested size: 362.37569pt x 644.22165pt.
+
+
+[7<./figs/scheme1.png><./figs/scheme2.png>]
+Overfull \vbox (15.57039pt too high) has occurred while \output is active []
+
+
+
+[8<./figs/fig.png>]
+<figs/plot.jpeg, id=46, 1160.335pt x 870.25125pt>
+File: figs/plot.jpeg Graphic file (type jpg)
+<use figs/plot.jpeg>
+Package luatex.def Info: figs/plot.jpeg  used on input line 304.
+(luatex.def)             Requested size: 362.37569pt x 271.78021pt.
+
+
+[9<./figs/plot.jpeg>] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 )
 
 Here is how much of LuaTeX's memory you used:
- 34752 strings out of 475506
+ 34801 strings out of 475506
  100000,1977958 words of node,token memory allocated
  568 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 15 attribute, 61 glue_spec
 , 15 attribute_list, 2 write nodes
    avail lists: 2:1321,3:161,4:52,5:314,6:38,7:4900,8:13,9:1648,10:7,11:359
- 57204 multiletter control sequences out of 65536+600000
+ 57238 multiletter control sequences out of 65536+600000
  39 fonts using 3045967 bytes
  84i,7n,89p,424b,265s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></op
@@ -851,10 +895,10 @@ e/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/texlive/2025/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/texlive/2025/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/texlive/2025/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (7 pages, 367432 bytes).
+Output written on main.pdf (10 pages, 1928215 bytes).
 
-PDF statistics: 74 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
+PDF statistics: 88 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

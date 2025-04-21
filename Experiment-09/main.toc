@@ -6,3 +6,6 @@
 \contentsline {section}{\numberline {4}State Diagram}{4}{}%
 \contentsline {section}{\numberline {5}State Transition Table}{4}{}%
 \contentsline {section}{\numberline {6}Determining the boolean functions}{5}{}%
+\contentsline {section}{\numberline {7}Circuit Diagram and Connections}{6}{}%
+\contentsline {section}{\numberline {8}Actual Circuit)}{8}{}%
+\contentsline {section}{\numberline {9}The input output wave forms}{9}{}%
