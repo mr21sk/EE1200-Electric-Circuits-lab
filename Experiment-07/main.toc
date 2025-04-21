@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Theoretical Background}{2}{}%
+\contentsline {subsection}{\numberline {1.1}T Flip-Flop Fundamentals}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Converting JK Flip-Flop to T Flip-Flop}{3}{}%
+\contentsline {section}{\numberline {2}Circuit Design}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Circuit Connections}{3}{}%
+\contentsline {subsection}{\numberline {2.2}T Flip-Flop Implementation}{5}{}%
+\contentsline {subsection}{\numberline {2.3}Counter Architecture}{5}{}%
+\contentsline {section}{\numberline {3}Truth Tables and State Diagrams}{5}{}%
+\contentsline {subsection}{\numberline {3.1}JK Flip-Flop Truth Table}{5}{}%
+\contentsline {subsection}{\numberline {3.2}MOD-7 Counter State Transition Table}{6}{}%
+\contentsline {section}{\numberline {4}Observations and Results}{6}{}%
+\contentsline {section}{\numberline {5}Arduino Clock Generation}{7}{}%
+\contentsline {section}{\numberline {6}Conclusion}{8}{}%

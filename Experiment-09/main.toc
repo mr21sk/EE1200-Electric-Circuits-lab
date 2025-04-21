@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}What is a Finite State Machine}{2}{}%
+\contentsline {section}{\numberline {2}Finite State Machines: Moore and Mealy Models}{2}{}%
+\contentsline {subsection}{\numberline {2.1}Moore Model}{2}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Key Features of the Moore Model:}{2}{}%
+\contentsline {section}{\numberline {3}Hardware Requirements for Moore Model Sequence Detector}{3}{}%
+\contentsline {section}{\numberline {4}State Diagram}{4}{}%
+\contentsline {section}{\numberline {5}State Transition Table}{4}{}%
+\contentsline {section}{\numberline {6}Determining the boolean functions}{5}{}%
